@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const input = "MasyaAllah";
+
+const map = new Map();
+
+for (let i = 0; i < input.length; i++) {
+  const currentLetter = input[i];
+  if (map.has(currentLetter) === true) {
+    const currentLetterCounter = map.get(currentLetter);
+    
+    map.set(currentLetter, currentLetterCounter + 1);
+    continue;
+  }
+  
+  map.set(currentLetter, 1);
+}
+
+for (const [letter, counter] of map) {
+  console.log(`'${letter}' : ${counter}`);
+}
+</script>
+
+</body>
+</html>
